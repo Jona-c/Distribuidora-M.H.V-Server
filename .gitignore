@@ -1,0 +1,38 @@
+## Server (Node/Express) ignores
+
+# Node modules
+node_modules/
+
+# Environment variables (private)
+.env
+.env.*
+
+# Uploads / user generated content
+uploads/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Build / output
+dist/
+build/
+
+# Databases
+*.sqlite
+*.db
+*.sqlite3
+
+# Coverage
+coverage/
+
+# Editors and IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+.env
+node_modules
