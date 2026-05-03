@@ -25,6 +25,7 @@ const userRouter      = require('./router/user.router.js');
 const productosRouter = require('./router/productos.router.js');
 const pedidosRouter   = require('./router/pedidos.router.js'); 
 const cuentaCorrienteRouter = require('./router/cuentaCorriente.router.js');
+const passwordRouter        = require('./router/password.router.js')
 
 // configurar rutas
 app.use('/api', authRouter);       // http://localhost:5000/api/auth/register
@@ -32,5 +33,6 @@ app.use('/api', userRouter);       // http://localhost:5000/api/user/me
 app.use('/api', productosRouter);  // http://localhost:5000/api/Productos
 app.use('/api', pedidosRouter);    // http://localhost:5000/api/pedidos
 app.use('/api', cuentaCorrienteRouter);  // http://localhost:5000/api/cuenta-corriente
+app.use('/api', passwordRouter);  // http://localhost:5000/api/auth/solicitar-codigo
 
 module.exports = app;
