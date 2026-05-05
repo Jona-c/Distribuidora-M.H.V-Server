@@ -10,12 +10,22 @@ const app = express();
 connectDB();
 
 // configurar los cors
+const allowedOrigins = [
+    'https://distribuidora-mhv.netlify.app',
+    'http://localhost:5000'
+];
+
 app.use(cors({
-    origin: [
-        'https://distribuidora-mhv.netlify.app/',
-        'http://localhost:5000'  // para seguir desarrollando local
-    ],
-    credentials: true,
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true);
+
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            return callback(new Error('No permitido por CORS'));
+        }
+    },
+    credentials: true
 }));
 
 // configurar body parser
