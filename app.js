@@ -10,7 +10,13 @@ const app = express();
 connectDB();
 
 // configurar los cors
-app.use(cors());
+app.use(cors({
+    origin: [
+        'https://distribuidora-mhv.netlify.app/',
+        'http://localhost:5000'  // para seguir desarrollando local
+    ],
+    credentials: true,
+}));
 
 // configurar body parser
 app.use(bodyParser.urlencoded({ extended: true }));
